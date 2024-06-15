@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.598.0",
+    "@aws-sdk/util-dynamodb": "^3.598.0",
+    "@middy/core": "^5.4.0",
+    "aws-serverless-express": "^3.4.0",
+    "dotenv": "^16.4.5",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "serverless-offline": "^13.6.0"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "D:\\Intership Class\\backend practice\\middy": {
+    "versionSfCore": null,
+    "versionFramework": "4.1.4",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeServiceName": null,
+    "servicePath": "D:\\Intership Class\\backend practice\\middy",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "user-service",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs14.x",
+        "region": "${env:AWS_REGION}"
+      },
+      "functions": {
+        "app": {
+          "handler": "index.handler",
+          "events": [
+            {
+              "http": {
+                "path": "users/{id}",
+                "method": "get"
+              }
+            },
+            {
+              "http": {
+                "path": "users",
+                "method": "post"
+              }
+            }
+          ]
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ]
+    },
+    "serviceRawFile": "service: user-service\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs14.x\r\n  region: ${env:AWS_REGION}\r\n\r\nfunctions:\r\n  app:\r\n    handler: index.handler\r\n    events:\r\n      - http:\r\n          path: users/{id}\r\n          method: get\r\n      - http:\r\n          path: users\r\n          method: post\r\n\r\nplugins:\r\n  - serverless-offline\r\n",
+    "command": [
+      "offline"
+    ],
+    "options": {},
+    "error": {
+      "message": "Cannot resolve '${env:AWS_REGION}' variable at 'provider.region'. None of the variables returned a value and no default value was provided. Please check your variable definitions or provide a default value.",
+      "stack": "Error: Cannot resolve '${env:AWS_REGION}' variable at 'provider.region'. None of the variables returned a value and no default value was provided. Please check your variable definitions or provide a default value.\n    at _ResolverManager.resolve (file:///C:/Users/User/.serverless/releases/4.1.4/package/dist/sf-core.js:1065:48680)\n    at async #handlePlaceholderNode (file:///C:/Users/User/.serverless/releases/4.1.4/package/dist/sf-core.js:1065:47223)\n    at async file:///C:/Users/User/.serverless/releases/4.1.4/package/dist/sf-core.js:1065:45358\n    at async processNodeAndHandleCompletion (file:///C:/Users/User/.serverless/releases/4.1.4/package/dist/sf-core.js:1065:38399)",
+      "code": "MISSING_VARIABLE_RESULT"
+    },
+    "machineId": "e588915152697f533dd8cba141d2bd63",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}

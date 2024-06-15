@@ -1,0 +1,20 @@
+service: user-service
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ${env:AWS_REGION}
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http:
+          path: users/{id}
+          method: get
+      - http:
+          path: users
+          method: post
+
+plugins:
+  - serverless-offline
